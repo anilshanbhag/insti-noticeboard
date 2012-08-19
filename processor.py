@@ -3,7 +3,7 @@ import dateutil.parser
 import re
 
 class MailProcessor:
-    def __init__(self, message, sender, title):
+    def __init__(self, sender, title, message):
         self.message = message
         self.sender = sender
         self.title = title
@@ -19,19 +19,33 @@ class MailProcessor:
         pass
 
     def event_details(self):
+        self.process_title()
+        self.process_message()
+
         for line in self.message.split('\n'):
+            print line
             if "Date" in line or "date" in line:
                 self.date = self.clean(line)
-            elif "Venue" in line or "venue" in line:
+            elif "Venue" in line:
                 self.venue = self.clean(line)
             elif "Time" in line or "time" in line:
                 self.time = self.clean(line)
 
-        print self.process_date()
-
+        print self.date
+        print self.venue
+        print self.time
+        try:
+            self.process_date()
+            self.process_venue()
+        except:
+            pass
 
     def clean(self ,line):
         return line.strip()
+
+    def process_message(self):
+        """ Strips events headers from top and bottom of message """
+        self.message = "\n".join( self.message.split('\n')[19:-7] )
 
     def process_date(self):
         self.date = re.sub('[\[()\]:-]',' ', self.date)
@@ -42,10 +56,13 @@ class MailProcessor:
 
         datestring = self.date + " " + self.time
         date = dateutil.parser.parse(datestring)
-        return date
+        self.date = date
 
     def process_venue(self):
-        pass
+        self.venue = " ".join( self.venue.split()[1:] )
+
+    def process_title(self):
+        self.title = re.sub('\[.*\]', '', self.title)
 
 if __name__ == "__main__":
     import sample_mail
