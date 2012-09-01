@@ -1,0 +1,166 @@
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+		body {
+			background-color : #000;
+		}
+		#container {
+			margin: 0 auto;
+			width: 1024px;
+			height: 746px;
+			background-color: #aaa;
+			border: 2px solid #9a6d44;
+			border-radius: 4px;
+		}
+		#header {
+			background-color: #9a6d44;
+			height: 46px;
+			width: 1024px;
+		}
+		#view {
+			background-color: #fff;
+			height: 660px;
+			width: 1004px;
+			padding-left: 20px;
+		}
+		#nav {
+			background-color: #9a6d44;
+			height: 35px;
+			width: 1024px;
+			padding-top: 5px;
+		}
+		#switch {
+			padding-left: 390px;
+			padding-top: 7px;
+		}
+		#switch-table {
+			border-collapse: collapse;
+		}
+		.switches {
+			color: white;
+			background-color: #8a5d34;
+			font-family: "Lucida Sans", sans-serif;
+			font-size: 14px;
+			width: 70px;
+			height: 28px;
+			border: 1px solid #444;
+			text-align: center;
+			cursor: pointer;
+		}
+		.switch-left {
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+		.switch-right {
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+		.switches:hover, .active {
+			background-color: #6b432a;
+		}
+		#date {
+			height: 75px;
+			width: 1024px;
+		}
+		#date-text {
+			padding-left: 50px;
+			padding-top: 10px;
+			font-size: 50px;
+		}
+		#calender-table {
+			border-collapse: collapse;
+		}
+		.week {
+			height: 111px;
+		}
+		.day {
+			width: 139px;
+			border: 1px solid #ccc;
+		}
+		#today-table {
+			padding-left: 10px;
+		}
+		</style>
+		<script type="text/javascript">
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<div id="switch">
+					<table id="switch-table">
+						<tr>
+							<td class="switches switch-left">Day</td>
+							<td class="switches">Week</td>
+							<td class="switches switch-right active">Month</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div id="view">
+				<div id="date">
+					<div id="date-text">June 2012</div>
+				</div>
+				<div id="calender">
+					<table id="calender-table">
+						<tbody>
+							<tr class="week">
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+							</tr>
+							<tr class="week">
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+							</tr>
+							<tr class="week">
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+							</tr>
+							<tr class="week">
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+							</tr>
+							<tr class="week">
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+								<td class="day"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="nav">
+				<table id="today-table">
+					<tr>
+						<td class="switches">Today</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,3 +1,5 @@
+# TODO : Change it to use Flask
+
 from config import *
 from IMAP import IMAPWrapper
 from processor import MailProcessor

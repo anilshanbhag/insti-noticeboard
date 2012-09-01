@@ -1,2 +1,7 @@
-username = "USERNAME"
-password = "PASSWORD"
+ldap_username = ""
+ldap_password = ""
+
+db_db = ""
+db_username = ""
+db_password = ""
+db_host = "localhost"
